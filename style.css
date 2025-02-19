@@ -1,6 +1,131 @@
+:root {
+    --gray: oklch(80% 3% 200);
+    --color-accent: oklch(55% 0.15 270)
+}
+
 body {
     /* Set line height to 1.5 times the font size
        and use the OS’s UI font as the website font
      */
     font: 100%/1.5 system-ui;
+    max-width: 50rem;
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--gray);
+}
+
+nav a {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.5em;
+}
+
+nav a.current {
+    border-bottom: 0.4em solid var(--gray);
+    padding-bottom: 0.1em; /* Reduce padding bottom to balance taller border height */
+}
+
+nav a:hover {
+    border-bottom: 0.4em solid var(--color-accent);
+    background-color: oklch(from var(--color-accent) 95% 5% h)
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+/* label,
+input,
+textarea,
+button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+label {
+    margin-block: 0.5rem;
+} */
+
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+
+label {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+}
+
+button {
+    grid-column: 1 / -1;
+}
+
+img {
+    max-width: 100%;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em;
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+}
+
+.projects h2 {
+    margin: 0;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+/* Resume styling */
+header p {
+    text-align: center;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.job-header time {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: right;
+    justify-content: none;
 }
